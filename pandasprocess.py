@@ -1,15 +1,20 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[21]:
+# In[ ]:
+
+
+
+
+
+# In[28]:
 
 
 import pandas as pd
 
 #file_path = 'C:\\Users\\Sourabh\\Desktop\\com728\\Airbnb_UK_2022.csv'
 
-def get_top_amenities(file_path):
-    df = pd.read_csv(file_path)
+def get_top_amenities(df):
     amenities_count = {}
     for index, row in df.iterrows():
         amenities = row['amenities'].replace('{', '').replace('}', '').replace('"', '').split(',')
@@ -22,38 +27,35 @@ def get_top_amenities(file_path):
     top_amenities_dict = {amenity: count for amenity, count in top_amenities}
     return top_amenities_dict
 
-def get_avg_price_by_location(file_path):
-    df = pd.read_csv(file_path)
+def get_avg_price_by_location(df):
     avg_price_by_location = df.groupby('host_location')['price'].mean()
     return avg_price_by_location
 
-def get_avg_review_score_by_location(file_path):
-    df = pd.read_csv(file_path)
+def get_avg_review_score_by_location(df):
     avg_review_score_by_location = df.groupby('host_location')['review_scores_rating'].mean()
     return avg_review_score_by_location
 
-def get_avg_review_scores_cleanliness_by_location(file_path):
-    df = pd.read_csv(file_path)
+def get_avg_review_scores_cleanliness_by_location(df):
     avg_review_scores_cleanliness_by_location = df.groupby('host_location')['review_scores_cleanliness'].mean()
     return avg_review_scores_cleanliness_by_location
 
-# Call it and print 
-top_amenities_dict = get_top_amenities(file_path)
-print("Top 10 most popular amenities or features:")
-for amenity, count in top_amenities_dict.items():
-    print(f"{amenity}: {count}")
+# # Call it and print 
+# top_amenities_dict = get_top_amenities(df)
+# print("Top 10 most popular amenities or features:")
+# for amenity, count in top_amenities_dict.items():
+#     print(f"{amenity}: {count}")
 
-avg_price_by_location = get_avg_price_by_location(file_path)
-print("\nAverage price of stay in each location:")
-print(avg_price_by_location)
+# avg_price_by_location = get_avg_price_by_location(df)
+# print("\nAverage price of stay in each location:")
+# print(avg_price_by_location)
 
-avg_review_score_by_location = get_avg_review_score_by_location(file_path)
-print("\nAverage review scores rating for each location:")
-print(avg_review_score_by_location)
+# avg_review_score_by_location = get_avg_review_score_by_location(df)
+# print("\nAverage review scores rating for each location:")
+# print(avg_review_score_by_location)
 
-avg_review_scores_cleanliness_by_location = get_avg_review_scores_cleanliness_by_location(file_path)
-print("\nAverage review cleanliness score for each location:")
-print(avg_review_scores_cleanliness_by_location)
+# avg_review_scores_cleanliness_by_location = get_avg_review_scores_cleanliness_by_location(df)
+# print("\nAverage review cleanliness score for each location:")
+# print(avg_review_scores_cleanliness_by_location)
 
 
 # In[ ]:

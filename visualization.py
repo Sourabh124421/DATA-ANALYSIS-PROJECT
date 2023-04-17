@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[16]:
+# In[25]:
 
 
 import pandas as pd
@@ -9,9 +9,8 @@ import matplotlib.pyplot as plt
 
 #file_path = 'C:\\Users\\Sourabh\\Desktop\\com728\\Airbnb_UK_2022.csv'
 
-def bedrooms_piechart(file_path):
-    df_piechart = pd.read_csv(file_path)
-    sorted_bedrooms_group_piechart = df_piechart.groupby('bedrooms').size().sort_values()
+def bedrooms_piechart(df):
+    sorted_bedrooms_group_piechart = df.groupby['bedrooms'].size().sort_values()
     piechart_bedrooms_list = sorted_bedrooms_group_piechart.index.tolist()
     number_bedrooms_list = sorted_bedrooms_group_piechart.tolist()
 
@@ -20,10 +19,10 @@ def bedrooms_piechart(file_path):
     plt.title("PROPORTION OF NO.OF BEEDROOMS")
     plt.legend(loc="best", bbox_to_anchor=(2, 1.5))
     plt.show()
+    return
 
-def room_type_counts(file_path):
-    df = pd.read_csv(file_path)
-# group the DataFrame by room type and count the number of listings 
+def room_type_counts(df):
+    # group the DataFrame by room type and count the number of listings 
     room_type_counts = df.groupby('room_type').count()['host_id']
     # create a bar chart of the counts
     room_type_counts.plot(kind='bar')
@@ -31,18 +30,17 @@ def room_type_counts(file_path):
     plt.ylabel('Number of Listings')
     plt.title('Number of Listings by Room Type')
     plt.show()
+    return
 
-def accommodates_vs_price_scatterplot(file_path):
-    df = pd.read_csv(file_path)
+def accommodates_vs_price_scatterplot(df):
     plt.scatter(df['accommodates'], df['price'], s=50)
     plt.title('Accommodates vs. Price')
     plt.xlabel('Accommodates')
     plt.ylabel('Price')
     plt.show()
-    
+    return
 
-def airbnb_price(file_path):
-    df = pd.read_csv(file_path)
+def airbnb_price(df):
     df['host_since'] = pd.to_datetime(df['host_since'])
 
     # Split data by year
@@ -87,9 +85,9 @@ def airbnb_price(file_path):
 
     # Display the plots
     plt.show()
-    
-def beds_pie_chart(file_path):
-    df = pd.read_csv(file_path)
+    return
+
+def beds_pie_chart(df):
     sorted_beds_group_piechart = df.groupby('beds').size().sort_values()
     piechart_beds_list = sorted_beds_group_piechart.index.tolist()
     number_beds_list = sorted_beds_group_piechart.tolist()
@@ -102,17 +100,13 @@ def beds_pie_chart(file_path):
     plt.legend(loc="best", bbox_to_anchor=(1.5, 1))
 
     plt.show()    
+    return
 
 
-bedrooms_piechart(file_path)
+# In[ ]:
 
-room_type_counts(file_path)
 
-accommodates_vs_price_scatterplot(file_path)
 
-airbnb_price(file_path)
-
-beds_pie_chart(file_path)
 
 
 # In[ ]:

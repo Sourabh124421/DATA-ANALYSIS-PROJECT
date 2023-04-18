@@ -20,7 +20,7 @@ def read_csv_file():
         print(f"Error: Could not read file: {file_path}")
         return [], file_path
 
-def retrieve_host_data(data):
+def retrieve_host_data(file_path):
     if not data:
         print("Error: No data found.")
         return
@@ -108,7 +108,7 @@ def filter_by_host_location(file_path):
 # data, file_path = read_csv_file()
 
 # # retrieve_host_data() function
-# retrieve_host_data(data)
+# retrieve_host_data(file_path)
 
 # #filter data by location using filter_by_location() function
 # filter_by_location(file_path)

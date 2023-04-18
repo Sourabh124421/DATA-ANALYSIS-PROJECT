@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[61]:
+# In[ ]:
 
 
 import csv
@@ -66,7 +66,7 @@ def filter_by_location(file_path):
 
 def filter_by_property_type(file_path):
     # Take input from user for property type
-    property_type = input('What Kind Of Property Are You Looking For ? -\n -renatl unit \n -Private room \n -houseboat \n -townhouse \n -home \n -condo \n -loft \n -cottage \n -guest suite \n -boat \n -cabin \n -serviced apartment \n -bed and breakfast \n -')
+    property_type = input('What Kind Of Property Are You Looking For ? -\n -renatl unit \n -guesthouse \n -houseboat \n -townhouse \n -home \n -condo \n -loft \n -cottage \n -guest suite \n -boat \n -cabin \n -serviced apartment \n -bed and breakfast \n -Yurt \n -villa \n -farm stay \n -penthouse \n -casa particular \n -apartment \n -studio \n -hut \n -bungalow \n -treehouse \n')
     
     # Open the CSV file
     with open(file_path, encoding='utf-8') as csv_file:

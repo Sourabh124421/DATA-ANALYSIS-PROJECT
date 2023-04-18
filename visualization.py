@@ -10,7 +10,7 @@ import matplotlib.pyplot as plt
 # REFERENCE file_path = 'C:\\Users\\Sourabh\\Desktop\\com728\\Airbnb_UK_2022.csv'
 
 def bedrooms_piechart(df):
-    sorted_bedrooms_group_piechart = df.groupby['bedrooms'].size().sort_values()
+    sorted_bedrooms_group_piechart = df.groupby('bedrooms').size().sort_values()
     piechart_bedrooms_list = sorted_bedrooms_group_piechart.index.tolist()
     number_bedrooms_list = sorted_bedrooms_group_piechart.tolist()
 

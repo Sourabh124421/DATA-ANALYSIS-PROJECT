@@ -21,7 +21,7 @@ def read_csv_file():
         return [], file_path
 
 def retrieve_host_data(file_path):
-    if not data:
+    if not file_path:
         print("Error: No data found.")
         return
     # To retrieve the data from the dataset we need to create a new dict
@@ -104,20 +104,20 @@ def filter_by_host_location(file_path):
         return []
 
 
-# # When i created it i wanted to test it and hence i called CSV file data and file path using read_csv_file() function and now im leaving it as commented
-# data, file_path = read_csv_file()
+# When i created it i wanted to test it and hence i called CSV file data and file path using read_csv_file() function and now im leaving it as commented
+data, file_path = read_csv_file()
 
-# # retrieve_host_data() function
-# retrieve_host_data(file_path)
+# retrieve_host_data() function
+retrieve_host_data(file_path)
 
-# #filter data by location using filter_by_location() function
-# filter_by_location(file_path)
+#filter data by location using filter_by_location() function
+filter_by_location(file_path)
 
-# #filter data by property type using filter_by_property_type function
-# filter_by_property_type(file_path)
+#filter data by property type using filter_by_property_type function
+filter_by_property_type(file_path)
 
-# #filter by host location using filter_by_host_location function
-# filter_by_host_location(file_path)
+#filter by host location using filter_by_host_location function
+filter_by_host_location(file_path)
 
 
 # In[ ]:

@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[1]:
+# In[2]:
 
 
 import pandas as pd
@@ -17,19 +17,21 @@ def get_top_amenities(df):
                 amenities_count[amenity] += 1
     top_amenities = sorted(amenities_count.items(), key=lambda x: x[1], reverse=True)[:10]
     top_amenities_dict = {amenity: count for amenity, count in top_amenities}
-    return top_amenities_dict
+    for amenity, count in top_amenities_dict.items():
+        print(amenity + ': ' + str(count))
+    return "ENJOY YOUR DATA"
 
 def get_avg_price_by_location(df):
     avg_price_by_location = df.groupby('host_location')['price'].mean()
-    return avg_price_by_location
+    return avg_price_by_location 
 
 def get_avg_review_score_by_location(df):
     avg_review_score_by_location = df.groupby('host_location')['review_scores_rating'].mean()
-    return avg_review_score_by_location
+    return avg_review_score_by_location 
 
 def get_avg_review_scores_cleanliness_by_location(df):
     avg_review_scores_cleanliness_by_location = df.groupby('host_location')['review_scores_cleanliness'].mean()
-    return avg_review_scores_cleanliness_by_location
+    return avg_review_scores_cleanliness_by_location 
 
 # # When i created the file i wanted to test it so i Called it and print and hence now its commented 
 
@@ -49,12 +51,6 @@ def get_avg_review_scores_cleanliness_by_location(df):
 # avg_review_scores_cleanliness_by_location = get_avg_review_scores_cleanliness_by_location(df)
 # print("\nAverage review cleanliness score for each location:")
 # print(avg_review_scores_cleanliness_by_location)
-
-
-# In[ ]:
-
-
-
 
 
 # In[ ]:

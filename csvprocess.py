@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[ ]:
+# In[14]:
 
 
 import csv
@@ -39,8 +39,8 @@ def retrieve_host_data(file_path):
         host_location = host_data['host_location']
         created_date = host_data['host_since']
         # Print all the data about the host ID
-        print(f"Name of listing: {name}\nHost name: {host_name}\nDescription: {description}\nHost location: {host_location}\nCreated date: {created_date}")
-        return[host_data]
+        print(f"Name of listing: {name}\n Host name: {host_name}\n Description: {description}\nHost location: {host_location}\nCreated date: {created_date}")
+        return "HOPE YOU'RE HAPPY WITH THE DATA"
     else:
         # Print message to be displayed if hostID is not found 
         print(f"Sorry! No Data found regarding HostID:{host_id}")
@@ -55,11 +55,12 @@ def filter_by_location(file_path):
         filtered_data = []
         for row in reader:
             if row['host_location'] == location:
-                filtered_data.append({'host_name': row['host_name'], 'property_type': row['property_type'], 'price': row['price'], 'minimum_nights': row['minimum_nights'], 'maximum_nights': row['maximum_nights']})
+                filtered_data.append({'host_name': row['host_name'] , 'property_type': row['property_type'], 'price': row['price'], 'minimum_nights': row['minimum_nights'], 'maximum_nights': row['maximum_nights']})
         if filtered_data:
             print("Here is the data you requested for -")
             for row in filtered_data:
-                print(row) 
+                print(row)
+                print("\n")
             return "HOPE YOU'RE HAPPY WITH THE DATA"
         else:
             print(f"Sorry I was unable to find anything related to '{location}'")
@@ -79,6 +80,7 @@ def filter_by_property_type(file_path):
             print("Here is the data you requested for -")
             for row in filtered_data:
                 print(row)
+                print("\n")
             return "HOPE YOU'RE HAPPY WITH THE DATA"
         else:
             print(f"Sorry, there seems to be no data available related to '{property_type}'")
@@ -98,27 +100,31 @@ def filter_by_host_location(file_path):
         if filtered_data:
             print("HERE IS THE DATA YOU REQUESTED FOR:")
             for row in filtered_data:
-                print(row)
+                print("-"*125)
+                print(f"Acceptance rate: {row['acceptance_rate']}\n")
+                print(f"Amenities: {row['amenities']}\n")
+                print(f"Instant bookable: {row['instant_bookable']}")
+                print("\n")
             return "HOPE YOU'RE HAPPY WITH THE DATA"
         else:
             print(f"Sorry !!! No information related to '{location}' and '{host_name}'")
     return "NO DATA"
 
         
-# When i created it i wanted to test it and hence i called CSV file data and file path using read_csv_file() function and now im leaving it as commented
-data, file_path = read_csv_file()
+# # When i created it i wanted to test it and hence i called CSV file data and file path using read_csv_file() function and now im leaving it as commented
+# data, file_path = read_csv_file()
 
-# retrieve_host_data() function
-retrieve_host_data(file_path)
+# # retrieve_host_data() function
+# retrieve_host_data(file_path)
 
-#filter data by location using filter_by_location() function
-filter_by_location(file_path)
+# #filter data by location using filter_by_location() function
+# filter_by_location(file_path)
 
-#filter data by property type using filter_by_property_type function
-filter_by_property_type(file_path)
+# #filter data by property type using filter_by_property_type function
+# filter_by_property_type(file_path)
 
-#filter by host location using filter_by_host_location function
-filter_by_host_location(file_path)
+# #filter by host location using filter_by_host_location function
+# filter_by_host_location(file_path)
 
 
 # In[ ]:

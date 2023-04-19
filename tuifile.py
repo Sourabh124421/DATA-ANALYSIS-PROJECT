@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[32]:
+# In[33]:
 
 
 def heading(): 
@@ -46,7 +46,7 @@ def pandasprocess_menu():
     
 def visualization_menu():
     print("\033[31m\nPlease Select One Option From The Visualization Processes Listed:\n\033[0m")
-    visualization_selection=input(" 1.Get Pie Chart for Proportion of Number of Bedrooms \n\n 2.Get Bar Chart for Number of listings for Each Room Type \n\n 3.Get Scatter Plot for Relationship between Accommodates and Price \n\n 4.Get Subplots Line Chart for Airbnb prices from 2019 - 2022 \n\n 5.Get PieChart for Proportion of Number of Beds \n\n")
+    visualization_selection=input(" 1.Get Pie Chart for Proportion of Number of Bedrooms \n\n 2.Get Bar Chart for Number of listings for Each Room Type \n\n 3.Get Scatter Plot for Relationship between Accommodates and Price \n\n 4.Get Subplots Line Chart for Airbnb prices from 2019 - 2022 \n\n 5.Get PieChart for Proportion of Number of Beds Preferred By Customers \n\n")
     print(f"\033[32mYou have selected:\033[0m{visualization_selection}")
     print("*" * 125) 
     try:

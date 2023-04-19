@@ -95,7 +95,7 @@ def beds_pie_chart(df):
     fig = plt.figure(figsize=(10, 8))
 
     plt.pie(number_beds_list, labels=piechart_beds_list, autopct='%1.1f%%')
-    plt.title("Proportion of Number of Beds")
+    plt.title("Proportion of Number of Beds Preferred by Customers")
 
     plt.legend(loc="best", bbox_to_anchor=(1.5, 1))
 
